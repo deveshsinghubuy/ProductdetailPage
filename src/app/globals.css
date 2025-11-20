@@ -1,8 +1,11 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-poppins: 'Poppins', sans-serif;
 }
 
 @theme inline {
@@ -12,15 +15,68 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.font-open-sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;               
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f0f0f0;    
+  border-radius: 4px;
+}
+.cp{
+  cursor: pointer;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888888e0;   
+  border-radius: 4px;
+  border: 2px solid #f0f0f0; 
+}
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none;  /* hide up/down arrows button*/
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none; /* default blue arrows hide kar do */
+}
+
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(-6px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(6px); }
+}
+
+.animate-fadeSlide {
+  animation: fadeSlide 4s ease-in-out forwards;
+}
+
+@media(max-width: 414px) {
+  .max-custom {
+    max-width: 148px;
+  }
+}
+@media(max-width: 320px) {
+  .max-custom {
+    max-width: 125px;
+  }
+  .custom-w-product{
+    max-width: 70px;
+  }
 }
